@@ -1,7 +1,7 @@
 {
   "name": "raisin-cookie",
   "version": "0.0.1",
-  "description": "strict mock api for local development",
+  "description": "a strict mock api for local development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
