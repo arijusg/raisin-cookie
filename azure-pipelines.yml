@@ -19,3 +19,8 @@ steps:
     npm ci
     npm run build
   displayName: 'npm ci and build'
+
+- task: PublishPipelineArtifact@0
+  inputs:
+     artifactName: 'artifacts'
+     targetPath: 'dist'
