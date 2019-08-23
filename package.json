@@ -16,7 +16,7 @@
     "start": "export TS_NODE_CACHE='false'; ts-node src/index.ts",
     "build": "rm -rf dist && tsc",
     "lint": "tslint  --project . --format verbose --fix -c tslint.json",
-    "test": "export TS_NODE_CACHE='false' && nyc _mocha --opts mocha.opts",
+    "test": "export TS_NODE_CACHE='false' && nyc _mocha --opts=mocha.opts --reporter=mocha-junit-reporter",
     "test:watch": "TS_NODE_CACHE='false' mocha -w --opts mocha.opts"
   },
   "author": "Arijus Gilbrantas",
@@ -33,6 +33,7 @@
     "@types/sinon": "^7.0.13",
     "chai": "4.2.0",
     "mocha": "6.2.0",
+    "mocha-junit-reporter": "^1.23.1",
     "nyc": "14.1.1",
     "sinon": "^7.4.1",
     "ts-node": "8.3.0",

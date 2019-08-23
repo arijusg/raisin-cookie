@@ -17,8 +17,22 @@ steps:
 
 - script: |
     npm ci
+  displayName: 'npm ci'
+
+- script: |
+    npm run test
+  displayName: 'Test'
+
+- script: |
     npm run build
   displayName: 'npm ci and build'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'test-results.xml'
+    failTaskOnFailedTests: true
 
 - task: PublishPipelineArtifact@0
   inputs:
